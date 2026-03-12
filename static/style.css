@@ -1,0 +1,212 @@
+:root {
+    --bg: #e7e7e7;
+    --fg: #000000;
+    --acc: #ff0000; /* Red as primary accent */
+    --border: 3px solid #000000;
+    --shadow: 8px 8px 0px #000000;
+    --shadow-sm: 4px 4px 0px #000000;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--fg);
+    display: flex;
+    justify-content: center;
+}
+
+.brutalist-container {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+header {
+    border: var(--border);
+    background: #ffcc00; /* Yellow header for contrast */
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.input-section {
+    grid-column: span 2;
+    background: white;
+    border: var(--border);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    border: var(--border);
+    padding: 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+button {
+    background: var(--acc);
+    color: white;
+    border: var(--border);
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.1s;
+    width: fit-content;
+}
+
+button:active {
+    box-shadow: 0 0 0;
+    transform: translate(4px, 4px);
+}
+
+button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+.panel {
+    background: white;
+    border: var(--border);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel h3 {
+    margin-top: 0;
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    display: inline-block;
+    width: fit-content;
+}
+
+.scroll-box {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 600px;
+    padding: 10px;
+    border-top: var(--border);
+}
+
+/* Agent Activity Logs */
+.agent-step {
+    border-bottom: 2px solid #000;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.agent-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.agent-name {
+    font-weight: 900;
+    text-transform: uppercase;
+    background: #eee;
+    padding: 2px 6px;
+    border: 1px solid #000;
+    font-size: 0.8rem;
+}
+
+.agent-action {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ccc;
+    border-top: 3px solid var(--acc);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.agent-content {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* Output Header */
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.download-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    box-shadow: 0 0 0;
+    border: 2px solid black;
+}
+
+.btn-black:hover {
+    background: white;
+    color: black;
+}
+
+/* Markdown styling */
+.markdown-body {
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+    text-transform: uppercase;
+    border-bottom: 3px solid black;
+}
+
+@media (max-width: 900px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+}

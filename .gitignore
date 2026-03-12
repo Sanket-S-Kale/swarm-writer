@@ -1,0 +1,20 @@
+# Environment Variables
+.env
+
+# Databases
+data/*.db
+data/*.sqlite
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# Docker
+.dockerignore
+
+# IDEs
+.vscode/
+.idea/

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACADEMIC AGENT | BRUTALIST</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="brutalist-container">
+        <header>
+            <h1>SWARM WRITER 2.5</h1>
+            <p>AUTONOMOUS ACADEMIC RESEARCH ENGINE</p>
+        </header>
+
+        <main class="brutalist-main">
+            <section class="input-section">
+                <textarea id="topicInput" placeholder="WHAT DO YOU WANT TO RESEARCH TODAY? ENTER TOPIC..."></textarea>
+                <button id="submitBtn">RUN RESEARCH AGENTS</button>
+            </section>
+
+            <div class="main-grid">
+                <section class="panel log-panel">
+                    <h3>LIVE AGENT PROTOCOL</h3>
+                    <div id="logs" class="scroll-box">
+                        <p class="placeholder">WAITING FOR COMMAND...</p>
+                    </div>
+                </section>
+
+                <section class="panel output-panel">
+                    <div class="output-header">
+                        <h3>FINAL RESEARCH PAPER</h3>
+                        <div class="download-btns" style="display:none;" id="downloadArea">
+                            <button onclick="download('md')" class="btn-black">DOWNLOAD .MD</button>
+                            <button onclick="download('latex')" class="btn-black">DOWNLOAD .TEX</button>
+                        </div>
+                    </div>
+                    <div id="paperContent" class="scroll-box markdown-body">
+                        <p class="placeholder">PAPER WILL BE GENERATED HERE...</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
