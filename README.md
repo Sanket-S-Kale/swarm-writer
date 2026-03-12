@@ -5,6 +5,7 @@
 ## Features
 
 - **Multi-Agent Architecture**: Utilizes a combination of specialized AI agents:
+  - **Base Agent**: Provides core LLM interaction, consistent logging, and state management capabilities that all other specialized agents inherit.
   - **Planner Agent**: Generates a detailed, step-by-step research plan and structural outline.
   - **Researcher Agent**: Executes the plan, searches the web/academic sources (via Tavily), and synthesizes information.
   - **Writer Agent**: Drafts the academic paper based on the research data and plan, injecting precise citations.
@@ -93,6 +94,7 @@ The application will be accessible at **http://localhost:8000**
 
 - `/app/main.py`: The FastAPI application entrypoint, handling core API routes and WebSocket lifecycle.
 - `/app/agents/`: Contains the base and specialized agents.
+    - `base.py`: The foundational agent class handling common features like LLM communication and logging.
     - `planner.py`: Responsible for structuring the inquiry.
     - `researcher.py`: Performs web and academic queries.
     - `writer.py`: Drafts narrative text and handles LaTeX generation.
